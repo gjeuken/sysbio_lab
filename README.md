@@ -1,1 +1,1 @@
-# sysbio_lab
+# Labs for the Systems Biology course
