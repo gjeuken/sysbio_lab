@@ -5,4 +5,4 @@ seaborn
 matplotlib
 jupyter
 ipywidgets
-scikit-leanr
+scikit-learn
