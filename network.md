@@ -35,6 +35,10 @@ It again depends largely on what you are modelling with the network.
 
 > This again depends on different cases. You are (probably) correct that all cancers would be linked by TP53, but depending on how you construct the network, you might find other unexpected ways on which they are connected. The tool is only as your reason for using it.
 
+3. Would weighted networks be able to handle multidimensional data or would you have to reduce the dimensions down to one?
+
+> Networks can definetely handle multidimentional data. However, networks usually exist outside the traditional cartesian space, that is, cannot be represented by a series of vectors. The process of converting a network to cartesian space is called "embedding" and is by no means trivial.
+
 
 # Network algorithms
 
@@ -45,3 +49,22 @@ It again depends largely on what you are modelling with the network.
 2. Is it the pathway analysis a part of network analysis or these two are totally different concepts? If they are different, could you clarify their differences, especially their usefulness in terms of situation?
 
 > They are mostly separate methods. The most common pathway analysis methods only consider a pathway as a set of genes, and not a network.
+
+3. In my understanding, the graph transversal algorithms are the different method to read the graph, but the graph itself including the nodes and edges should be the same. Why the graph looks different in the Jupyter notebook between two algorithms?
+
+> Graph traversal algorithms are ways of **exploring** the netowork in a structured way, and it is usefull in many ways, but it will not return a full representation for the network. It returns all nodes reacheable from the root node, as well as all the links used in the exploring. Since the two algorithms explore the network in different ways, they will return the same nodes, but different links.
+
+
+## Composite
+
+1. a) In the networkx module in python there is a possibility of doing a directed network using the Digraph class. Would the input file look different than the one used in the case of an undirected method? In case that a network has both directed or undirected relationships of the nodes how would this could be done in the networkx module?
+
+b) In the Label propagation algorithm the first step is to assign labels in the nodes based on our interpretation of in which community we think they belong. How would this assignment affect the result in case it doesn't represent the reality? Is this algorithm widely used since it is not reproducible?
+
+c) How would the edge weights be visualized in the case of a weighted network? In case we were doing the first steps of exploring the network like they were performed in the Jupyter Notebook, which steps would have been done different or what steps would have been added? 
+
+> a) In a directed network, the input of [node1 node2] is takes as a directed edge *from* node1 *to* node2, given it its direction. If a network has both directed and undirected edges, you shoud treat it as a directed network, and use two link in opposite directions for nodes where you want to represent an undirected link.
+
+> b) This is a case of the tool only being as good as the hand that weilds it. This algorithm is widely used because it is fast, and given a good input, will produce reasonable results that will help you understand your system.
+
+> c) There are many ways of visualizing a network. One ways in whichs the weights can be used is a forces in a "force-directed graph visualization". But I did not understand the last part of your question.
