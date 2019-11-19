@@ -82,6 +82,14 @@ It again depends largely on what you are modelling with the network.
 
 > Graph traversal algorithms are ways of **exploring** the netowork in a structured way, and it is usefull in many ways, but it will not return a full representation for the network. It returns all nodes reacheable from the root node, as well as all the links used in the exploring. Since the two algorithms explore the network in different ways, they will return the same nodes, but different links.
 
+4. As seen in Barabàsi's book (chapter 2), we can exploit the breadth-first search to determine various characteristic of the network (e.g. shortest path, diameter, components)... but the depth-first method is never mentioned again. Is it ever used? Does it have any functional purpose at all?
+
+> By definition, BFS always returns a shortest path between the root node and any other node (but only on an unwheighted graph), and thus it can also be use in other methods that involve using shortest paths (diameter). But both DFS and BFS will give you the connected components.
+
+5. In the Notebook you mention a "clever dynamic programming technique" that is used to find the average shortest path in a faster (and I guess non-holistic) way. What is that?
+
+> That is the [Dijkstra's algorithm](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm)
+
 
 # Composite
 
